@@ -1,0 +1,28 @@
+kubectl get node ( lista os nodes do cluster)
+kubectl get node -owide 
+kubectl get pod ( lista os pods do namespace)
+kubectl get pod -A ( lista os pods de todos os namespaces)
+kubectl get pod -Aowide ( lista mais informações dos pods)
+kubectl get pod -v9 ( lista os pods com o modo verbose)
+kubectl get pod -n kube-system etcd-master -oyaml (exporta o yaml com o describe do pod etcd-master)
+
+
+necessario instalar o etcdctl no master
+apt install etcdctl-client
+
+entrar na pasta
+/etc/kubernetes/pki/etcd/ (local onde estarao as chaves e certificados do cluster)
+
+
+
+etcdctl member list --cacert $(pwd)/ca.crt --cert $(pwd)/server.crt --key server.key--write-out table
+comando para listar os membros do cluster
+
+scritp etcdctl.env
+
+cat <<EOF > etcdctl.env
+export ETCDCTL_CACERT=/etc/kubernetes/pki/etcd/ca.crt
+export ETCDCTL_CERT=/etc/kubernetes/pki/etcd/server.crt
+export ETCDCTL_KEY=/etc/kubernetes/pki/etcd/server.key
+export ETCDCTL_API=3
+EOF
