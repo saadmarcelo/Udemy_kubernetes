@@ -31,7 +31,17 @@ backup etcd ( normalmente fica na pasta /var/lib/etcd/)
 etcdctl snapshot save backup.db (faz o backup no arquivo backup.db)
 etcdctl snapshot restore backup.db (restaura o backup)
 
+#modulo_02 YAML
+
 kubectl apply -f modulo_02/pod.yaml
 kubectl api-resources ( lista todos recursos do cluester)
 
+kubectl get pods nginx -o yaml (para gerar o arquivo yaml do pod q ja esta rodando)
 
+install krew
+
+https://krew.sigs.k8s.io/docs/user-guide/quickstart/
+
+kubectl krew install neat (plugin neat para )
+
+kubectl get pods nginx -o yaml | kubectl neat ( cria um arquivo yaml com as informacoes basicas para rodar o pod)
