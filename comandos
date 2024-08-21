@@ -26,3 +26,12 @@ export ETCDCTL_CERT=/etc/kubernetes/pki/etcd/server.crt
 export ETCDCTL_KEY=/etc/kubernetes/pki/etcd/server.key
 export ETCDCTL_API=3
 EOF
+
+backup etcd ( normalmente fica na pasta /var/lib/etcd/)
+etcdctl snapshot save backup.db (faz o backup no arquivo backup.db)
+etcdctl snapshot restore backup.db (restaura o backup)
+
+kubectl apply -f modulo_02/pod.yaml
+kubectl api-resources ( lista todos recursos do cluester)
+
+
