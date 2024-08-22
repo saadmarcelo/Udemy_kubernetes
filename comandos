@@ -45,3 +45,22 @@ https://krew.sigs.k8s.io/docs/user-guide/quickstart/
 kubectl krew install neat (plugin neat para )
 
 kubectl get pods nginx -o yaml | kubectl neat ( cria um arquivo yaml com as informacoes basicas para rodar o pod)
+
+##### modulo 03 ######
+
+kubectl get namespaces ( mostra as namespaces atualmente no cluster)
+
+kubectl get pod --namespace kube-flannel ( lista os pods no namespace kube-flannel)
+
+kubectl create namespace devops (cria o namespace devops)
+
+kubectl delete namespace devops ( deleta o namespace devops)
+
+kubectl create namespace devops --dry-run -oyaml | kubectl neat > /tmp/namespace.yaml( roda o comando de criar o namespace mas gera o arquivo yaml e manda como entrada no pugin do neat para limpar os dados do yaml e salva no arquivo /tmp/namespace.yaml)
+
+##### modulo 04 ########
+
+
+
+
+
