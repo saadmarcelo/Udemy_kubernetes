@@ -60,7 +60,12 @@ kubectl create namespace devops --dry-run -oyaml | kubectl neat > /tmp/namespace
 
 ##### modulo 04 ########
 
+kubectl run --image alpine --rm -it nomepod sh (cria um container com a imagem do alpine , que sera removido assim q sair do console)
 
+kubectl run --image hashicorp/terraform:latest terraform-demo --dry-run -oyaml (gerando um yaml do pod do terraform)
 
+kubectl run --image hashicorp/terraform:latest terraform-demo --dry-run -oyaml | kubectl neat (gera o yaml sem os conteudos nao desejados)
 
+kubectl exec -it terraform-demo -- sh ( para conectar no pod terraform-demo )
 
+kubectl run --image busybox:1.28 --rm -it busybox-demo sh ( cria um pod com a imgem busybox)
