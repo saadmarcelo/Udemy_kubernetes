@@ -68,4 +68,14 @@ kubectl run --image hashicorp/terraform:latest terraform-demo --dry-run -oyaml |
 
 kubectl exec -it terraform-demo -- sh ( para conectar no pod terraform-demo )
 
-kubectl run --image busybox:1.28 --rm -it busybox-demo sh ( cria um pod com a imgem busybox)
+kubectl run --image busybox:1.28 --rm -it busybox-demo sh ( cria um pod com a imgem busybox vem com algumas ferramentas instaladas)
+
+kubectl run --image httpd multicontianer-pod --dry-run -oyaml | kubectl neat > modulo_04/pod-multicontainer.yaml ( cria um yaml para o pod-multconainer )
+
+kubectl apply -f modulo_04/pod-multicontainer.yaml ( criar o pod-multicontainer com 2 containers httpd e debug)
+
+ kubectl logs multicontianer-pod (vai mostrar os logs do container httpd q ele definou como default)
+
+kubectl logs multicontianer-pod -c debug ( para vericar o log do do container debug )
+
+
