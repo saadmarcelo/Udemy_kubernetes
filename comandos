@@ -78,4 +78,24 @@ kubectl apply -f modulo_04/pod-multicontainer.yaml ( criar o pod-multicontainer 
 
 kubectl logs multicontianer-pod -c debug ( para vericar o log do do container debug )
 
+kubectl exec multicontianer-pod -- ls (executa uma comando no pod multicontianer-pod)
+
+kubectl exec multicontianer-pod -c debug -- ls ( executa um comando no pod debug)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
