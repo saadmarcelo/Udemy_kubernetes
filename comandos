@@ -103,7 +103,9 @@ nsenter -t 70941 -n ls / ( usando o comando nsenter para radar um comando no nam
 nsenter -t 70941 -n curl 10.244.2.7 (rodando o comando curl no ip do container para ter a resposta do apache)
 
 
+##### static pods
 
+cd /etc/kubernetes/manifests/    ( todos manifestos criado nessa pasta serao criados)
 
 
 
