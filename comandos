@@ -82,17 +82,25 @@ kubectl exec multicontianer-pod -- ls (executa uma comando no pod multicontianer
 
 kubectl exec multicontianer-pod -c debug -- ls ( executa um comando no pod debug)
 
+######## procedimentos para conectar no pod sem usar o kubectl exec 
 
+kubectl get pods -owide  ( lista os pods e mostra mais informacoes em qual node o container esta rodando)
 
+  # conecta no node onde o container esta rodando 
 
+crictl ps ( lista os container rodando no node)
 
+crictl inspect e7b | jq (inspeciona o json com container e manda para o jq para fica colorido a saida e facilitar a leitura )
 
+crictl inspect e7b 2> /dev/null | jq '.info.pid' ( mesma opcao anterior , jogando as mens de erro no /dev/null e filtrando o campo info.pid)
 
+# com  informacao do pid podemos da o comando ps
 
+ps aux | grep 70941  ( mostra os processo com o pid 70941)
 
+nsenter -t 70941 -n ls / ( usando o comando nsenter para radar um comando no namespace com o pid 70941 )
 
-
-
+nsenter -t 70941 -n curl 10.244.2.7 (rodando o comando curl no ip do container para ter a resposta do apache)
 
 
 
