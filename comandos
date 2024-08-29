@@ -110,4 +110,12 @@ cd /etc/kubernetes/manifests/    ( todos manifestos criado nessa pasta serao cri
 
 #### modulo 05 #############
 
+Kubectl create deployment --image httpd httpd ( cria um deployment do com uma imagem do apache)
 
+kubectl get deploy ( mostra o stado do deployment)
+
+kubectl get deploy httpd -oyaml | kubectl neat ( exporta o deployment para um yaml)
+
+kubectl get replicaset ( mostra os replicasets no cluster)
+
+kubectl edit deploy httpd ( ja edita o arquivo yaml do deployment)
