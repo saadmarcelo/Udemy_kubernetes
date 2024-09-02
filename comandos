@@ -119,3 +119,26 @@ kubectl get deploy httpd -oyaml | kubectl neat ( exporta o deployment para um ya
 kubectl get replicaset ( mostra os replicasets no cluster)
 
 kubectl edit deploy httpd ( ja edita o arquivo yaml do deployment)
+
+kubectl api-resources | grep -i deploy ( lista os resources com o nome deploy e mostra a versao da api)
+
+kubectl get deploy --show-labels ( mostra as labels dos deploys)
+
+kubectl get pods -l environment=development ( motras os pods com o label environment=development)
+
+kubectl explain deployment ( mostra uma documentacao de criacao de um deployment)
+
+kubectl explain deployment.metadata ( mostra os campos permitidos dentro do metadata)
+
+kubectl rollout history deployment/nginx ( mostra os historicos do deployment/nginx ) 
+
+kubectl rollout status deployment/nginx ( mostra o status do deployment/nginx)
+
+kubectl rollout pause deployment/nginx ( pausa o deployment/nginx)
+
+kubectl rollout resume deployment/nginx (continua a rollout )
+
+kubetl rollout undo deployment/nginx ( volta por padrao para o ultimo replicaset)
+
+kubectl rollout undo deployment/nginx --to-revision 1 ( volta para o 1 replicaset no historico )
+ 
