@@ -31,6 +31,10 @@ spec:
         - image: nginx
           imagePullPolicy: Always
           name: nginx
+          resources:
+            requests:
+              cpu: 1
+              memory: 512M
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
