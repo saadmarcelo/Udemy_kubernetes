@@ -141,4 +141,9 @@ kubectl rollout resume deployment/nginx (continua a rollout )
 kubetl rollout undo deployment/nginx ( volta por padrao para o ultimo replicaset)
 
 kubectl rollout undo deployment/nginx --to-revision 1 ( volta para o 1 replicaset no historico )
- 
+
+kubectl edit deploy httpd (vai editar o yaml do deploy httpd para aumentar a quantidade de replicas { forma errada de se fazer})
+
+kubectl scale deployment nginx --replicas 2 ( aumenta a quantidade de replicas para 2 do deployment nginx)
+
+
