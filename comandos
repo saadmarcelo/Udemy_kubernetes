@@ -146,4 +146,7 @@ kubectl edit deploy httpd (vai editar o yaml do deploy httpd para aumentar a qua
 
 kubectl scale deployment nginx --replicas 2 ( aumenta a quantidade de replicas para 2 do deployment nginx)
 
+kubectl top node ( lista a media de utilizacao dos recursos dos nodes)
 
+wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml ( para fazendo o download do api metric service )
+change file to add             - --kubelet-insecure-tls (spec.template.spec.containers.args)
