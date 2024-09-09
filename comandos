@@ -150,3 +150,10 @@ kubectl top node ( lista a media de utilizacao dos recursos dos nodes)
 
 wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml ( para fazendo o download do api metric service )
 change file to add             - --kubelet-insecure-tls (spec.template.spec.containers.args)
+
+
+https://goldilocks.docs.fairwinds.com/#how-can-this-help-with-my-resource-settings    # ferrementa para mensurar o uso de dados dos pods instalar via helm
+
+
+
+
