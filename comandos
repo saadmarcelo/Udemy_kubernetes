@@ -172,4 +172,6 @@ kubectl create deployment --image nginx nginx -oyaml --dry-run | kubectl neat > 
 
 kubectl get node --show-labels ( mostra as labels do node)
 
+########### modulo 06 #############
 
+kubectl get statefulsets -A
