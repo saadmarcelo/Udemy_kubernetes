@@ -156,5 +156,20 @@ https://goldilocks.docs.fairwinds.com/#how-can-this-help-with-my-resource-settin
 
 
 #### modulo 06 #############
+DeamonSets
+
+servico deve rodar em cada um dos nodes
+
+caso de uso:
+  - logs
+  - CNI (configuracao da interface de rede)
+  - pacth 
+
+kubectl get ds -A 
+
+kubectl create deployment --image nginx nginx -oyaml --dry-run | kubectl neat > daemonset.yaml
+(para usar co mo modelo de yaml e subsituir do deploymento por DaemonSet e retirar as replicas)
+
+kubectl get node --show-labels ( mostra as labels do node)
 
 
