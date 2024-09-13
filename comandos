@@ -175,3 +175,33 @@ kubectl get node --show-labels ( mostra as labels do node)
 ########### modulo 06 #############
 
 kubectl get statefulsets -A
+
+
+########### modulo 07 #############
+statefulset:
+  - deployment controlado 
+  - nomes (previsiveis)
+  - volume por pod
+
+para executar o lab precisamos de um local provisioner storage
+https://github.com/rancher/local-path-provisioner
+
+para instalar 
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.29/deploy/local-path-storage.yaml
+
+kubectl get pvc -A ( comando para verificar o pvc de todo o cluster)
+
+kubectl get storageclass -A (mostra o storage class)
+
+na instalacao do local-path-storage ela nao ficou como default ( precisamos editar isso )
+
+kubectl edit sc local-path ( edita o yaml do storage class ) adicionar apos no annotations storageclass.kubernetes.io/is-default-class: "true" 
+
+kubectl get sc (mostra a local-path como default)
+
+kubectl get statefulsets.app
+
+kubectl scale statefulset nginx --replicas 6 
+
+
+editado o modulo_07/statefulset/statefulset.yaml para solicitacao do pvc na hora da criacao do statefulset vai ser criado um volume persistente para cada pod
