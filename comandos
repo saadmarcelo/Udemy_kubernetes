@@ -219,4 +219,6 @@ kubectl logs echo-command-zn7vt ( para ver os logs do container executando o job
 
 problema do job ele é imutavel ( para poder resolver essee problema colocar no final do yaml do pod o parametro ttlSecondsAfterFinished: 0 q vai apagar o pod no momento que termnar a execucao da tarefa)
 
+cronjob mantem os ultimos 3 executados
 
+kubectl get cronjob ( lista os agendamentos do jobs)
