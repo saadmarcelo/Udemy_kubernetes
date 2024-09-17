@@ -222,3 +222,35 @@ problema do job ele é imutavel ( para poder resolver essee problema colocar no 
 cronjob mantem os ultimos 3 executados
 
 kubectl get cronjob ( lista os agendamentos do jobs)
+
+
+############# modulo 09 #############
+services
+
+Porque utilizar?
+  - pronto unico de entrada
+  - Load balancing
+  - DNS name (service discovery)
+
+tipos de services
+  Cluster IP:
+    - O mais utilizado
+    - Comunicaçao interna do cluster
+    - Não é utlizado para expor a porta para fora do cluster
+  NodePort:
+    - Acesso externo via nodeport
+    - Bom para testes e demos
+    - Range 30000 -32767
+  Load Balancer:
+    - Funciona na cloud
+    - Ideal para app TCP ou UDP
+    - Custoso ter um LB por aplicação
+  External Name:
+   - criar um redirecinemndo de dns
+
+kubectl get svc -A ( pega todos os services rodando no cluster)
+
+kubectl get svc kubernetes -oyaml ( mostra o yaml do service kubernetes)
+kubectl get svc kubernetes -oyaml kubectl neat ( para jogar no serice q retira os itens desnecessairos do yaml) 
+
+
