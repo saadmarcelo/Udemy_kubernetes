@@ -7,6 +7,7 @@ kubectl get pod -v9 ( lista os pods com o modo verbose)
 kubectl get pod -n kube-system etcd-master -oyaml (exporta o yaml com o describe do pod etcd-master)
 
 
+
 necessario instalar o etcdctl no master
 apt install etcdctl-client
 
