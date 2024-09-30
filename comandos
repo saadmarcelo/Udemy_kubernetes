@@ -6,13 +6,11 @@ kubectl get pod -Aowide ( lista mais informações dos pods)
 kubectl get pod -v9 ( lista os pods com o modo verbose)
 kubectl get pod -n kube-system etcd-master -oyaml (exporta o yaml com o describe do pod etcd-master)
 
-
 necessario instalar o etcdctl no master
 apt install etcdctl-client
 
 entrar na pasta
 /etc/kubernetes/pki/etcd/ (local onde estarao as chaves e certificados do cluster)
-
 
 
 etcdctl member list --cacert $(pwd)/ca.crt --cert $(pwd)/server.crt --key server.key--write-out table
@@ -251,6 +249,13 @@ tipos de services
 kubectl get svc -A ( pega todos os services rodando no cluster)
 
 kubectl get svc kubernetes -oyaml ( mostra o yaml do service kubernetes)
-kubectl get svc kubernetes -oyaml |  kubectl neat ( para jogar no serice q retira os itens desnecessairos do yaml) 
+kubectl get svc kubernetes -oyaml kubectl neat ( para jogar no serice q retira os itens desnecessairos do yaml) 
 
 
+kubectl expose ( expoen o servico temporariamente para testes)
+kubectl expose deployment nginx --port 80 --target-port 80 ( expoem o deployment nginx na porta 80, ele cria um service )
+
+caso queria conectar em um service q nao esta no mesmo namespace
+host  kube-dns.kube-system.svc.cluster.local ( nome do service. namespace. svc. cluster. local)
+
+kubectl get endpoint ( mostra todos os enpoints dos servicos )
