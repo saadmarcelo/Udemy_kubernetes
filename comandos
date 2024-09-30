@@ -259,3 +259,5 @@ caso queria conectar em um service q nao esta no mesmo namespace
 host  kube-dns.kube-system.svc.cluster.local ( nome do service. namespace. svc. cluster. local)
 
 kubectl get endpoint ( mostra todos os enpoints dos servicos )
+
+kubectl describe endpoints nginx ( mostra as informacoes do endpoint nginx)
