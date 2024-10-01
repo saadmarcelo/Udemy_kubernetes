@@ -273,5 +273,5 @@ kubectl edit service nginx ( para editar o config do servico para nodeport)
 kubectl get service ( vai mostrar os servicos com nodepor e nas portas vai mostrar qual porta estara exposta a aplicacao 
 entao basta colocar o ip do woker:porta de qualquer maquina da rede que tera acesso a aplicaçao)
 
-
+é necessario instalar o metallb para poder utilizar o loadbalancer ( ferramenta dinsponivel para entregar ips para o loadbalance)
 
