@@ -261,3 +261,17 @@ host  kube-dns.kube-system.svc.cluster.local ( nome do service. namespace. svc. 
 kubectl get endpoint ( mostra todos os enpoints dos servicos )
 
 kubectl describe endpoints nginx ( mostra as informacoes do endpoint nginx)
+
+kubectl get configmap -n kube-system ( lista todos os configmaps do namespace kube-system)
+
+kubectl get configmap -n kube-system -o yaml | kubectl neat ( vai estrair dados nao necessarios e mostra o yaml do configmap )
+
+###nodeport###
+
+kubectl edit service nginx ( para editar o config do servico para nodeport)
+
+kubectl get service ( vai mostrar os servicos com nodepor e nas portas vai mostrar qual porta estara exposta a aplicacao 
+entao basta colocar o ip do woker:porta de qualquer maquina da rede que tera acesso a aplicaçao)
+
+
+
