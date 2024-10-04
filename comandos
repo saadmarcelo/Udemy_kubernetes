@@ -275,3 +275,4 @@ entao basta colocar o ip do woker:porta de qualquer maquina da rede que tera ace
 
 é necessario instalar o metallb para poder utilizar o loadbalancer ( ferramenta dinsponivel para entregar ips para o loadbalance)
 
+type externalName serve para fazer links e redirecionamentos  
