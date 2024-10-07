@@ -274,9 +274,36 @@ kubectl get service ( vai mostrar os servicos com nodepor e nas portas vai mostr
 entao basta colocar o ip do woker:porta de qualquer maquina da rede que tera acesso a aplicaçao)
 
 é necessario instalar o metallb para poder utilizar o loadbalancer ( ferramenta dinsponivel para entregar ips para o loadbalance)
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
+
+https://metallb.universe.tf/configuration/
+
+configurar layer 2  coonform o link acima
+
+criar o arquivo manifest.yaml com a faixa de ip quer ira ser disponibilizada pelo mettalb
+
 
 type externalName serve para fazer links e redirecionamentos  
 
 
 
 ############# modulo 10  #############
+
+pesquisar no google sobre o ingress nginx , baixar da versao do github a versao do baremetal
+wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.2/deploy/static/provider/baremetal/deploy.yaml 
+
+editar o kind : Service para o tipo do servico ser LoadBalancer ( como ja temos o metallb ira disponibilizar o ip para o loadbalancer)
+
+kubectl apply -f modulo_10/ingress/deploy.yaml
+
+testar o loadbalancer 
+kubectl get svc -n ingress-nginx ( curl no external ip do loadbalancer )
+
+kubectl get ingressclass ( vai listar as ingressclass IMPORTANTE criar uma ingressclass default)
+
+kubect get ingressclass nginx -oyaml ( mostrar o yaml do ingressclass )
+kubect edit ingressclass nginx -oyaml ( editar o yaml do ingressclass  para mudar o annotations transformando em default   ingressclass.kubernetes.io/is-default-class: "true")
+
+kubectl get po -n ingress-nginx ( vai lisar o pods do ingress-nginx para saber o nome do pod e poder consultar o log
+
+kubectl logs -n ingress-nginx ingress-nginx-controller-6484d48959-cxzch (Toda vez q for alterada verficar no pod do controller sera feito o reload com as informacoes )
