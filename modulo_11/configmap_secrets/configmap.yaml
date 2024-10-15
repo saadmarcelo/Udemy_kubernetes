@@ -4,3 +4,7 @@ metadata:
   name: nginx-demo
 data:
   virtual_host: "vhost1.localhost.com"
+  index.html: |
+    <html>
+      <h1> Opa, chegou no index</h1>
+    </html>
