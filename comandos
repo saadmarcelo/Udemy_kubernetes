@@ -310,3 +310,18 @@ kubectl logs -n ingress-nginx ingress-nginx-controller-6484d48959-cxzch (Toda ve
 
 
 
+############# modulo 11  #############
+Config maps e secrets
+
+kubectl get configmap ( lista os configmaps do cluster)
+
+kubectl create configmap kubectl create configmap my-config --from-literal=key1=config --from-literal=key2=confi
+g2 (criando um configmap na namespace default )
+
+kubectl delete configmap my-config
+
+cd modulo_11/configmap_secret
+kubectl apply -f configmap.yaml ( cria o configmap)
+kubectl apply -f deployment.yaml ( cria o deployment com o apontamento do configmap )
+kubectl exec nginx-1-6b84755c46-dlsjc -- env ( lista as variavel de ambiente VIRTUAL_HOST )
+
