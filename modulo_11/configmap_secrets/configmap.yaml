@@ -8,3 +8,17 @@ data:
     <html>
       <h1> Opa, chegou no index</h1>
     </html>
+  vhost.conf: |
+    server {
+      listen 80;
+      listen [::]:80;
+
+      root /usr/share/nginx/app1;
+      index index.html index.htm index.nginx-debian.html;
+
+      server_name app.localhost.com www.app.localhost.com;
+
+      location / {
+                try_files $uri $uri/ =404;
+      }
+    }

@@ -25,8 +25,11 @@ spec:
                   key: virtual_host
           volumeMounts:
             - name: index-html
-              mountPath: "/usr/share/nginx/html/index.html"
+              mountPath: "/usr/share/nginx/app1/index.html"
               subPath: "index.html"
+            - name: vhost
+              mountPath: "/etc/nginx/conf.d/vhost.conf"
+              subPath: "vhost.conf"
       volumes:
         - name: index-html
           configMap:
@@ -34,3 +37,9 @@ spec:
             items:
               - key: "index.html"
                 path: "index.html"
+        - name: vhost
+          configMap:
+            name: nginx-demo
+            items:
+              - key: "vhost.conf"
+                path: "vhost.conf"
